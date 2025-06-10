@@ -1,5 +1,5 @@
 // Imposta la data e ora dell'appuntamento
-const targetDate = new Date("2025-06-20T18:30:00"); // Esempio: 12 giugno ore 20:30
+const targetDate = new Date("2025-06-20T18:30:00");
 
 const countdownEl = document.getElementById("countdown");
 const messageEl = document.getElementById("message");
@@ -59,9 +59,9 @@ const scheduledMessages = {
 };
 
 
-let shownMessages = new Set(); // Per evitare ripetizioni
 
-// Funzione per ottenere la data e ora attuali in formato "YYYY-MM-DD HH:MM"
+let shownMessages = new Set();
+
 function getCurrentDateTimeKey() {
   const now = new Date();
   const year = now.getFullYear();
@@ -72,36 +72,20 @@ function getCurrentDateTimeKey() {
   return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
-// Controlla ogni 30 secondi se è il momento di mostrare un messaggio
-setInterval(() => {
-  const currentKey = getCurrentDateTimeKey();
-  if (scheduledMessages[currentKey] && !shownMessages.has(currentKey)) {
-    messageEl.textContent = scheduledMessages[currentKey];
-    shownMessages.add(currentKey); // Evita di mostrarlo più volte
-  } else if (scheduledMessages[currentKey]) {
-    messageEl.textContent = scheduledMessages[currentKey];
-  }
-}, 30000);
-
-
-// Aggiorna il timer ogni secondo
-function checkAndShowMessage() {
-  const now = new Date();
+function showScheduledMessage() {
   const currentKey = getCurrentDateTimeKey();
 
-  // Se c'è un messaggio esatto per questo momento
   if (scheduledMessages[currentKey] && !shownMessages.has(currentKey)) {
     messageEl.textContent = scheduledMessages[currentKey];
     shownMessages.add(currentKey);
-    return;
-  }
-
-  // Cerca il messaggio più recente (solo se nessun altro è stato mostrato)
-  if (shownMessages.size === 0) {
-    const keys = Object.keys(scheduledMessages).sort(); // Ordina le chiavi
+  } else if (scheduledMessages[currentKey]) {
+    messageEl.textContent = scheduledMessages[currentKey];
+  } else if (shownMessages.size === 0) {
+    // Se non è ancora stato mostrato nessun messaggio, mostra il più recente già passato
+    const keys = Object.keys(scheduledMessages).sort();
     for (let i = keys.length - 1; i >= 0; i--) {
       const scheduledTime = new Date(keys[i].replace(" ", "T"));
-      if (scheduledTime <= now) {
+      if (scheduledTime <= new Date()) {
         messageEl.textContent = scheduledMessages[keys[i]];
         shownMessages.add(keys[i]);
         break;
@@ -110,10 +94,7 @@ function checkAndShowMessage() {
   }
 }
 
-checkAndShowMessage();              // Controllo iniziale al primo caricamento
-setInterval(checkAndShowMessage, 30000);  // Controlli ogni 30 secondi
-
-// Funzione per aggiornare il countdown
+// Funzione countdown
 function updateCountdown() {
   const now = new Date();
   const difference = targetDate - now;
@@ -128,9 +109,17 @@ function updateCountdown() {
   const minutes = Math.floor((difference / (1000 * 60)) % 60);
   const seconds = Math.floor((difference / 1000) % 60);
 
-  countdownEl.textContent = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} secondi`;
+  const daysStr = String(days).padStart(2, "0");
+  const hoursStr = String(hours).padStart(2, "0");
+  const minutesStr = String(minutes).padStart(2, "0");
+  const secondsStr = String(seconds).padStart(2, "0");
+
+  countdownEl.textContent = `${daysStr}:${hoursStr}:${minutesStr}:${secondsStr}`;
 }
 
-// Avvia il countdown ogni secondo
+// Avvio immediato e intervalli
+showScheduledMessage();
+updateCountdown();
+
+setInterval(showScheduledMessage, 30000);
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Aggiorna subito alla prima visualizzazione
