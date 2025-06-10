@@ -56,19 +56,8 @@ const scheduledMessages = {
   "2025-06-20 08:30": "E mi rendo conto, solo ora, che le montagne erano dentro di me", // Verso 4 - 4/4
   "2025-06-20 12:00": "Sono per strada, partito da poco e con la testa piena di te.",
   "2025-06-20 18:00": "Sto arrivando, sono dietro l'angolo e già ti vedo...",
-
-
-
-
-
 };
 
-"Respira profondamente, ci siamo quasi.",
-  "Manca sempre meno ✨",
-  "Chissà cosa indosserai...",
-  "Manca poco al sorriso che mi piace...",
-  "Hai già pensato a cosa dirmi per prima cosa?",
-  "Cosa farai quando mi vedrai?"
 
 let shownMessages = new Set(); // Per evitare ripetizioni
 
