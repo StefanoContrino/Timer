@@ -113,3 +113,24 @@ function checkAndShowMessage() {
 checkAndShowMessage();              // Controllo iniziale al primo caricamento
 setInterval(checkAndShowMessage, 30000);  // Controlli ogni 30 secondi
 
+// Funzione per aggiornare il countdown
+function updateCountdown() {
+  const now = new Date();
+  const difference = targetDate - now;
+
+  if (difference <= 0) {
+    countdownEl.textContent = "È arrivato il momento! ✨";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  countdownEl.textContent = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} secondi`;
+}
+
+// Avvia il countdown ogni secondo
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Aggiorna subito alla prima visualizzazione
