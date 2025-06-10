@@ -78,6 +78,8 @@ setInterval(() => {
   if (scheduledMessages[currentKey] && !shownMessages.has(currentKey)) {
     messageEl.textContent = scheduledMessages[currentKey];
     shownMessages.add(currentKey); // Evita di mostrarlo più volte
+  } else if (scheduledMessages[currentKey]) {
+    messageEl.textContent = scheduledMessages[currentKey];
   }
 }, 30000);
 
