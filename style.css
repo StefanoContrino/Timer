@@ -1,29 +1,91 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .container {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    max-width: 500px;
-    margin: auto;
-  }
-  
-  #countdown {
-    font-size: 2.5em;
-    margin: 20px 0;
-    color: #e63946;
-  }
-  
-  #message {
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #1d3557;
-  }
-  
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #f5d5ff, #c4e0e5);
+  color: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#music-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Backgrounds dinamici */
+body.morning {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+}
+
+body.afternoon {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+
+body.evening {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #f0e7ff;
+}
+
+body.night {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #d0d6f9;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #5a189a;
+}
+
+#countdown {
+  font-size: 3em;
+  color: #b5179e;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#message {
+  font-size: 1.4em;
+  color: #3c096c;
+  font-style: italic;
+  transition: opacity 0.5s ease;
+  min-height: 2.5em;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
