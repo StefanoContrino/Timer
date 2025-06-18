@@ -1,5 +1,5 @@
 // Imposta la data e ora dell'appuntamento
-const targetDate = new Date("2025-06-20T18:30:00"); // Esempio: 12 giugno ore 20:30
+const targetDate = new Date("2025-06-20T15:30:00"); // Esempio: 12 giugno ore 20:30
 
 const countdownEl = document.getElementById("countdown");
 const messageEl = document.getElementById("message");
@@ -55,7 +55,7 @@ const scheduledMessages = {
   "2025-06-20 06:30": "Eiiiiii, lo sai che finito qui io parto vero?",
   "2025-06-20 08:30": "E mi rendo conto, solo ora, che le montagne erano dentro di me", // Verso 4 - 4/4
   "2025-06-20 12:00": "Sono per strada, partito da poco e con la testa piena di te.",
-  "2025-06-20 18:00": "Sto arrivando, sono dietro l'angolo e già ti vedo...",
+  "2025-06-20 15:00": "Sto arrivando, sono dietro l'angolo e già ti vedo...",
 };
 
 
