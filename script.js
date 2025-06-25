@@ -1,5 +1,5 @@
 // Imposta la data e ora dell'appuntamento
-const targetDate = new Date("2025-06-20T15:30:00"); // Esempio: 12 giugno ore 20:30
+const targetDate = new Date("2025-07-17T19:30:00"); // Esempio: 12 giugno ore 20:30
 
 const countdownEl = document.getElementById("countdown");
 const messageEl = document.getElementById("message");
