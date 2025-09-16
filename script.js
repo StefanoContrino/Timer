@@ -156,20 +156,6 @@ function updateBackground() {
 updateBackground();
 setInterval(updateBackground, 10 * 60 * 1000);
 
-// Gestione musica
-const musicToggle = document.getElementById('music-toggle');
-const backgroundMusic = document.getElementById('background-music');
-
-musicToggle.addEventListener('click', () => {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    musicToggle.textContent = '🔊'; // icona volume acceso
-  } else {
-    backgroundMusic.pause();
-    musicToggle.textContent = '🎵'; // icona volume spento
-  }
-});
-
 // Timer (semplice conto alla rovescia o conteggio, qui esempio conto avanti)
 let startTime = Date.now();
 const timerEl = document.getElementById('timer');
@@ -274,6 +260,7 @@ function formatTime(seconds) {
   const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
   return `${minutes}:${secs}`;
 }
+
 
 
 
