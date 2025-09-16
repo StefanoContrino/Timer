@@ -17,20 +17,20 @@ const scheduledMessages = {
   "2025-09-21 17:00": "Quale valore provi a difendere anche quando farlo è difficile o scomodo?",
   "2025-09-22 17:00": "C’è una ferita che, una volta guarita, ti ha insegnato qualcosa di prezioso?",
   "2025-09-23 17:00": "Se la tua infanzia fosse un film, quale scena sarebbe la più importante e perché?",
-  "2025-09-24 17:00": "--------",
-  "2025-09-25 17:00": "--------",
-  "2025-09-26 17:00": "--------",
-  "2025-09-27 17:00": "--------",
-  "2025-09-28 17:00": "--------",
-  "2025-09-29 17:00": "--------",
-  "2025-09-30 17:00": "--------",
-  "2025-10-01 17:00": "--------",
-  "2025-10-02 17:00": "--------",
-  "2025-10-03 17:00": "--------",
-  "2025-10-04 17:00": "--------",
-  "2025-10-05 17:00": "--------",
-  "2025-10-06 17:00": "--------",
-  "2025-10-07 17:00": "--------",
+  "2025-09-24 17:00": "Qual è un desiderio o una speranza che non hai mai detto ad alta voce?",
+  "2025-09-25 17:00": "Raccontami di una volta in cui hai dubitato di te stessa: cosa ti ha fatto rialzare?",
+  "2025-09-26 17:00": "Quale storia su di te vorresti smettere di raccontare — quella che ti limita — e come la riscriveresti?",
+  "2025-09-27 17:00": "Quale ricordo ti sorprende ogni volta che lo richiami alla mente?",
+  "2025-09-28 17:00": "Cosa vorresti che la gente capisse di te senza che tu debba spiegartelo?",
+  "2025-09-29 17:00": "Se potessi abbandonare un’abitudine e prenderne subito un’altra utile, quali sarebbero?",
+  "2025-09-30 17:00": "Cosa consideri sacro o intoccabile nella tua vita, e perché?",
+  "2025-10-01 17:00": "Qual è l’amore più grande che senti — non per forza romantico — e come si manifesta?",
+  "2025-10-02 17:00": "Raccontami di una scelta in cui hai dovuto decidere tra testa e cuore: cosa hai scelto e come ti è andata?",
+  "2025-10-03 17:00": "Se potessi dire qualcosa alla te di dieci anni fa, cosa le diresti per confortarla o scuoterla?",
+  "2025-10-04 17:00": "Qual è una verità sulle relazioni che hai imparato a tue spese?",
+  "2025-10-05 17:00": "Hai un rimpianto che oggi trasformeresti in lezione? Qual è e come lo useresti?",
+  "2025-10-06 17:00": "Quando ti senti smarrita, qual è la cosa concreta che usi per ritrovarti?",
+  "2025-10-07 17:00": "Cosa ti fa sentirti davvero vista e compresa — un gesto, una frase, un silenzio?",
 };
 
 
@@ -232,6 +232,7 @@ setInterval(aggiornaSfondo, 30 * 60 * 1000);
 
 
 setInterval(updateCountdown, 1000);
+
 
 
 
