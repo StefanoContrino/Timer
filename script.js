@@ -9,7 +9,28 @@ const messageEl = document.getElementById("message");
 
 // Messaggi con date e orari precisi (formato: "YYYY-MM-DD HH:MM")
 const scheduledMessages = {
-  "2025-09-16 14:00": "Siamo di nuovo connessi dal codice",
+  "2025-09-16 17:00": "Siamo di nuovo connessi dal codice, e tra poco lo saremo ancora di più.",
+  "2025-09-17 17:00": "Quale esperienza ti ha trasformata più di tutte, anche se all’epoca non lo sapevi?",
+  "2025-09-18 17:00": "Qual è una parte di te che mostri solo a poche persone e perché quelle poche?",
+  "2025-09-19 17:00": "Che significato ha per te la parola casa — è un luogo, una persona, un tempo?",
+  "2025-09-20 17:00": "In quali momenti ti senti davvero libera, e cosa impedisce quella libertà negli altri momenti?",
+  "2025-09-21 17:00": "Quale valore provi a difendere anche quando farlo è difficile o scomodo?",
+  "2025-09-22 17:00": "C’è una ferita che, una volta guarita, ti ha insegnato qualcosa di prezioso?",
+  "2025-09-23 17:00": "Se la tua infanzia fosse un film, quale scena sarebbe la più importante e perché?",
+  "2025-09-24 17:00": "--------",
+  "2025-09-25 17:00": "--------",
+  "2025-09-26 17:00": "--------",
+  "2025-09-27 17:00": "--------",
+  "2025-09-28 17:00": "--------",
+  "2025-09-29 17:00": "--------",
+  "2025-09-30 17:00": "--------",
+  "2025-10-01 17:00": "--------",
+  "2025-10-02 17:00": "--------",
+  "2025-10-03 17:00": "--------",
+  "2025-10-04 17:00": "--------",
+  "2025-10-05 17:00": "--------",
+  "2025-10-06 17:00": "--------",
+  "2025-10-07 17:00": "--------",
 };
 
 
@@ -211,6 +232,7 @@ setInterval(aggiornaSfondo, 30 * 60 * 1000);
 
 
 setInterval(updateCountdown, 1000);
+
 
 
 
