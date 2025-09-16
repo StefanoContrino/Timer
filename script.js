@@ -171,11 +171,6 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 
-
-// Audio play/pause button
-const audio = document.getElementById('romantic-music');
-const btnAudio = document.getElementById('audio-control');
-
 btnAudio.addEventListener('click', () => {
   if (audio.paused) {
     audio.play();
@@ -260,6 +255,7 @@ function formatTime(seconds) {
   const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
   return `${minutes}:${secs}`;
 }
+
 
 
 
