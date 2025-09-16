@@ -234,6 +234,47 @@ setInterval(aggiornaSfondo, 30 * 60 * 1000);
 setInterval(updateCountdown, 1000);
 
 
+// --- Player con barra progresso ---
+const playPauseBtn = document.getElementById("play-pause");
+const progressBar = document.getElementById("progress-bar");
+const currentTimeEl = document.getElementById("current-time");
+const totalTimeEl = document.getElementById("total-time");
+const audioPlayer = backgroundMusic; // usa lo stesso audio di sottofondo
+
+// Play / Pause
+playPauseBtn.addEventListener("click", () => {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playPauseBtn.textContent = "⏸️ Pause";
+  } else {
+    audioPlayer.pause();
+    playPauseBtn.textContent = "▶️ Play";
+  }
+});
+
+// Mostra durata totale
+audioPlayer.addEventListener("loadedmetadata", () => {
+  totalTimeEl.textContent = formatTime(audioPlayer.duration);
+});
+
+// Aggiorna barra e tempo corrente
+audioPlayer.addEventListener("timeupdate", () => {
+  progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+  currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+});
+
+// Permette di trascinare la barra
+progressBar.addEventListener("input", () => {
+  audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
+});
+
+// Funzione per formattare mm:ss
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+  return `${minutes}:${secs}`;
+}
+
 
 
 
