@@ -8,7 +8,7 @@ const messageEl = document.getElementById("message");
 
 
 // Messaggi con date e orari precisi (formato: "YYYY-MM-DD HH:MM")
-const scheduledMessages = {
+// const scheduledMessages = {
   "2025-06-10 21:00": "Oggi è la prima notte in cui il codice ci connette...",
   "2025-06-11 06:30": "Buongiorno! Come stai oggi? 💖",
   "2025-06-11 12:00": "Eiii, come va a lavoro? Buon appetito!",
@@ -258,4 +258,5 @@ setInterval(aggiornaSfondo, 30 * 60 * 1000);
 
 setInterval(showScheduledMessage, 30000);
 setInterval(updateCountdown, 1000);
+
 
