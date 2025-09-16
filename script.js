@@ -210,8 +210,8 @@ aggiornaSfondo();
 setInterval(aggiornaSfondo, 30 * 60 * 1000);
 
 
-setInterval(showScheduledMessage, 30000);
 setInterval(updateCountdown, 1000);
+
 
 
 
