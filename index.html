@@ -14,6 +14,13 @@
   </div>
   <button id="music-toggle" aria-label="Attiva/Disattiva musica">🎵</button>
 <audio id="background-music" loop>
+  <!-- Nuovo -->
+  <div id="player">
+  <button id="play-pause">▶️ Play</button>
+  <input type="range" id="progress-bar" value="0" min="0" max="100" step="1">
+  <span id="current-time">0:00</span>/<span id="total-time">0:00</span>
+</div>
+
   <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
   Il tuo browser non supporta l’audio.
 </audio>
@@ -21,3 +28,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
